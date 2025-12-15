@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Disk Marmitas</title>
+</head>
+<body>
+<h1>Disk Marmitas ONLINE</h1>
+<pre id="out">Carregando...</pre>
+<script>
+const API_URL = "https://SUA-API.onrender.com/api";
+
+async function load() {
+  const r = await fetch(API_URL + "/menu");
+  document.getElementById("out").innerText = JSON.stringify(await r.json(), null, 2);
+}
+load();
+</script>
+</body>
+</html>
